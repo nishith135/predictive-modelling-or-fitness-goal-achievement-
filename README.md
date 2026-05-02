@@ -111,4 +111,4 @@ Contributions are welcome! If you'd like to improve the model accuracy or add ne
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-*Created with ❤️ by [Nishith](https://github.com/nishith135)*
+
