@@ -1,0 +1,46 @@
+Dataset Link: https://www.kaggle.com/datasets/ayyappanmarimuthu/fitness-goal-achievement-dataset
+
+1. Data Collection
+	- load the fitness_goals dataset
+	- Target - Workout excerices, Nutrition Diets.
+
+2. Data Preprocessing
+	- Remove the Null values
+	- Remove the Duplicates
+
+3. Removing the Outliers
+	- Using IQR method
+
+4. Encoding
+	- Label Encoding
+
+5. Data Visulization
+	- Workout Plan Class Sample Distribution
+	- Nutrition Plan Class Distribution
+	- Correlation Matrix
+
+8. train-test-split (for both targets)
+	
+9. models:
+		- RandomForest
+		- Decision Tree
+		- KNN
+		- XGBoost
+		- CatBoost
+		- Voting classifier(RF, GB, XGB)
+
+10. Training the models
+11. Comparing the models with accuracy, precision, recall, f1 score
+12. Comparison Graphs are generated with scores of all models.
+13. Save the best trained model
+14. Explainable AI (XAI) Visualizations
+	- LIME and SHAP
+
+FrontEnd:
+=========
+1. The frontend is developed using the Flask framework, with user registration and login functionality supported by an SQLite database.
+2. The frontend collects user input for prediction the fittness.
+3. The submitted data is securely transmitted to the backend, where preprocessing steps—such are applied.
+4. The trained model performs the prediction.
+5. The final result is sent to the frontend and clearly displayed to the user. The user will see workout exercises and a nutrition plan categorized and tailored to what is most suitable for them.
+

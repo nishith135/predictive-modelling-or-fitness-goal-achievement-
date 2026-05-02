@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness recommendation · predictive modelling</title>
+    <!-- Bootstrap Icons (professional, clean) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Font Awesome (optional fallback, but we rely on bootstrap icons) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR (with bootstrap icons) -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="/"><i class="bi bi-activity"></i>fitPredict</a>
+        </div>
+        <div class="nav-links">
+            <a href="/home"><i class="bi bi-house-door"></i> Home</a>
+            <a href="/graphs"><i class="bi bi-bar-chart-steps"></i> Graphs</a>
+            <a href="../static/Notebook.html"><i class="bi bi-journal-bookmark-fill"></i> Notebook</a>
+            <a href="/"><i class="bi bi-box-arrow-right"></i> Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION (taller, with project title) -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Train smarter, backed by data</h1>
+        <span class="project-title">Predictive Modelling of Fitness Goal Achievement</span>
+        <p>Machine learning meets real‑life training data — personalized plans, powered by AI.</p>
+    </div>
+</section>
+
+<!-- MAIN CONTENT: INPUT FORM (larger container) -->
+<div class="main-container">
+    <div class="form-card">
+        <h2><i class="bi bi-clipboard2-pulse"></i> Personalized fitness plan</h2>
+        <div class="subhead"><i class="bi bi-pencil-square"></i> fill in your details </div>
+
+        <!-- error placeholder (hidden by default) -->
+        {% if error %}
+        <div class="error">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <span>{{ error }}</span>
+        </div>
+        {% endif %}
+
+        <!-- actual form – all fields use type="text" but with numeric limits (no js) -->
+        <form action="/predict" method="post">
+            <!-- row 1 -->
+            <div class="field">
+                <label for="age"><i class="bi bi-calendar"></i> Age (years)</label>
+                <input id="age" type="text" name="age" min="15" max="90" placeholder="e.g. 28" required>
+            </div>
+            <div class="field">
+                <label for="gender"><i class="bi bi-gender-ambiguous"></i> Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="weight"><i class="bi bi-bullseye"></i> Weight (kg)</label>
+                <input id="weight" type="text" step="0.1" min="30" max="250" placeholder="72.5" name="weight" required>
+            </div>
+
+            <!-- row 2 -->
+            <div class="field">
+                <label for="height"><i class="bi bi-rulers"></i> Height (meters)</label>
+                <input id="height" type="text" step="0.01" min="1.2" max="2.5" placeholder="1.75" name="height" required>
+            </div>
+            <div class="field">
+                <label for="bmi"><i class="bi bi-calculator"></i> BMI</label>
+                <input id="bmi" type="text" step="0.01" min="10" max="60" placeholder="23.5" name="bmi" required>
+            </div>
+            <div class="field">
+                <label for="goal"><i class="bi bi-trophy"></i> Primary Goal</label>
+                <select id="goal" name="goal" required>
+                    <option value="" disabled selected>Select goal</option>
+                    <option value="fat loss">Fat Loss</option>
+                    <option value="muscle gain">Muscle Gain</option>
+                    <option value="endurance">Endurance</option>
+                    <option value="general fitness">General Fitness</option>
+                </select>
+            </div>
+
+            <!-- row 3 -->
+            <div class="field">
+                <label for="health_condition"><i class="bi bi-heart-pulse"></i> Health Condition</label>
+                <select id="health_condition" name="health_condition" required>
+                    <option value="" disabled selected>Select condition</option>
+                    <option value="none">None</option>
+                    <option value="asthma">Asthma</option>
+                    <option value="injury">Injury</option>
+                    <option value="hypertension">Hypertension</option>
+                    <option value="heart disease">Heart Disease</option>
+                    <option value="diabetes">Diabetes</option>
+                    <option value="pcos">PCOS</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="activity_level"><i class="bi bi-bar-chart"></i> Activity Level</label>
+                <select id="activity_level" name="activity_level" required>
+                    <option value="" disabled selected>Select activity</option>
+                    <option value="low">Low</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="experience_level"><i class="bi bi-stars"></i> Experience Level</label>
+                <select id="experience_level" name="experience_level" required>
+                    <option value="" disabled selected>Select experience</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+
+            <!-- row 4 -->
+            <div class="field">
+                <label for="dietary_preference"><i class="bi bi-cup-straw"></i> Dietary Preference</label>
+                <select id="dietary_preference" name="dietary_preference" required>
+                    <option value="" disabled selected>Select diet</option>
+                    <option value="veg">Vegetarian</option>
+                    <option value="non-veg">Non-Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="pescatarian">Pescatarian</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="sleep_hours"><i class="bi bi-moon"></i> Sleep Hours</label>
+                <input id="sleep_hours" type="text" step="0.1" min="0" max="24" placeholder="7.5" name="sleep_hours" required>
+            </div>
+            <div class="field">
+                <label for="workout_type_preference"><i class="bi bi-bicycle"></i> Workout Preference</label>
+                <select id="workout_type_preference" name="workout_type_preference" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option value="hiit">HIIT</option>
+                    <option value="cardio">Cardio</option>
+                    <option value="strength">Strength</option>
+                    <option value="flexibility">Flexibility</option>
+                    <option value="balance">Balance</option>
+                    <option value="functional">Functional</option>
+                </select>
+            </div>
+
+            <!-- row 5 -->
+            <div class="field">
+                <label for="equipment_available_count"><i class="bi bi-tools"></i> Equipment count</label>
+                <input id="equipment_available_count" type="text" min="0" max="6" placeholder="3" name="equipment_available_count" required>
+            </div>
+            <div class="field">
+                <label for="time_available"><i class="bi bi-hourglass"></i> Time (min/day)</label>
+                <input id="time_available" type="text" min="15" max="240" placeholder="45" name="time_available" required>
+            </div>
+            <div class="field">
+                <label for="has_allergy"><i class="bi bi-exclamation-diamond"></i> Has Allergy?</label>
+                <select id="has_allergy" name="has_allergy" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- row 6 -->
+            <div class="field">
+                <label for="has_digestive_issue"><i class="bi bi-egg-fried"></i> Digestive issue?</label>
+                <select id="has_digestive_issue" name="has_digestive_issue" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="smoking"><i class="bi bi-fire"></i> Smoking?</label>
+                <select id="smoking" name="smoking" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="cigarettes_per_day"><i class="bi bi-lung"></i> Cigarettes/day</label>
+                <input id="cigarettes_per_day" type="text" step="0.1" min="0" max="60" placeholder="0" name="cigarettes_per_day" required>
+            </div>
+
+            <!-- row 7 -->
+            <div class="field">
+                <label for="alcohol"><i class="bi bi-cup"></i> Alcohol consumption?</label>
+                <select id="alcohol" name="alcohol" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="alcohol_units_per_week"><i class="bi bi-sort-numeric-up"></i> Alcohol units/week</label>
+                <input id="alcohol_units_per_week" type="text" step="0.1" min="0" max="100" placeholder="0" name="alcohol_units_per_week" required>
+            </div>
+            <div class="field">
+                <label for="micronutrient_score"><i class="bi bi-droplet"></i> Micronutrient score</label>
+                <input id="micronutrient_score" type="text" step="0.01" min="0" max="1" placeholder="0.75" name="micronutrient_score" required>
+            </div>
+
+            <!-- row 8 -->
+            <div class="field">
+                <label for="protein_intake_g"><i class="bi bi-cake"></i> Protein (g/day)</label>
+                <input id="protein_intake_g" type="text" step="0.1" min="0" max="500" placeholder="120" name="protein_intake_g" required>
+            </div>
+            <div class="field">
+                <label for="steps_per_day"><i class="bi bi-shoe-prints"></i> Steps per day</label>
+                <input id="steps_per_day" type="text" min="0" max="50000" placeholder="8000" name="steps_per_day" required>
+            </div>
+            <div class="field">
+                <label for="water_intake_liters"><i class="bi bi-droplet-half"></i> Water (L/day)</label>
+                <input id="water_intake_liters" type="text" step="0.1" min="0" max="10" placeholder="2.5" name="water_intake_liters" required>
+            </div>
+
+            <!-- full width button with icon -->
+            <div class="field full">
+                <button type="submit"><i class="bi bi-magic"></i> Get Recommendation <i class="bi bi-arrow-right-short"></i></button>
+            </div>
+        </form>
+
+        <!-- note: no javascript validation -->
+    </div>
+</div>
+
+<!-- FOOTER with Bootstrap Icons and extra links -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-copy">
+            <i class="bi bi-c-circle"></i> 2026 fitPredict — Machine learning fitness modeling
+        </div>
+    </div>
+</footer>
+
+<!-- minimal script to hide empty error (no validation) -->
+<script>
+    (function() {
+        var errorDiv = document.querySelector('.error');
+        if (errorDiv && (errorDiv.innerHTML.trim() === '' || errorDiv.textContent.trim() === '')) {
+            errorDiv.style.display = 'none';
+        }
+    })();
+</script>
+</body>
+</html>

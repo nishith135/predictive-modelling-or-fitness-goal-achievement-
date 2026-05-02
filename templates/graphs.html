@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fitPredict · Model Graphs & XAI</title>
+    <!-- Bootstrap Icons & Font Awesome (for extra variety) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/graphs.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR (identical to home) -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="/"><i class="bi bi-activity"></i>fitPredict</a>
+        </div>
+        <div class="nav-links">
+            <a href="/home"><i class="bi bi-house-door"></i> Home</a>
+            <a href="/graphs"><i class="bi bi-bar-chart-steps"></i> Graphs</a>
+            <a href="../static/Notebook.html" class="bi bi-journal-bookmark-fill"></i> Notebook</a>
+            <a href="/"><i class="bi bi-box-arrow-right"></i> Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO with different title & subtitle -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Model Insights & Explainability</h1>
+        <span class="page-tagline">visual diagnostics · XAI · performance</span>
+        <p>Distribution plots, correlation, confusion matrices, metrics, and SHAP explanations.</p>
+    </div>
+</section>
+
+<!-- MAIN GRAPH GALLERY -->
+<div class="main-container">
+    <div class="gallery-header">
+        <i class="bi bi-eye-fill"></i>
+        <h2>Evaluation graphs & XAI</h2>
+    </div>
+
+    <div class="graph-grid" id="graphGrid">
+        <!-- card 1: Workout Plan Class Sample Distribution -->
+        <div class="graph-card" data-graph="1">
+            <div class="card-header">
+                <h3><i class="bi bi-bar-chart"></i> Workout Plan Dist.</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download.png', 'Workout Plan Class Sample Distribution')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download.png', 'Workout Plan Class Sample Distribution')">
+                <img src="../static/graphs/download.png" alt="workout sample distribution" loading="lazy">
+            </div>
+            <div class="graph-description">
+                Frequency of each workout plan category in the dataset – reveals class balance.
+            </div>
+        </div>
+
+        <!-- card 2: Nutrition Plan Class Distribution -->
+        <div class="graph-card" data-graph="2">
+            <div class="card-header">
+                <h3><i class="bi bi-pie-chart"></i> Nutrition Plan Dist.</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(1).png', 'Nutrition Plan Class Distribution')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(1).png', 'Nutrition Plan Class Distribution')">
+                <img src="../static/graphs/download%20(1).png" alt="nutrition class distribution" loading="lazy">
+            </div>
+            <div class="graph-description">
+                Counts per nutrition plan class (e.g., fat loss, muscle gain). Helps detect skewness.
+            </div>
+        </div>
+
+        <!-- card 3: correlation matrix -->
+        <div class="graph-card" data-graph="3">
+            <div class="card-header">
+                <h3><i class="bi bi-grid-3x3-gap-fill"></i> Correlation matrix</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(2).png', 'Feature Correlation Matrix')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(2).png', 'Feature Correlation Matrix')">
+                <img src="../static/graphs/download%20(2).png" alt="correlation matrix" loading="lazy">
+            </div>
+            <div class="graph-description">
+                Pearson correlation among numeric features – identifies multicollinearity.
+            </div>
+        </div>
+
+        <!-- card 4: confusion matrix for Workout plan class -->
+        <div class="graph-card" data-graph="4">
+            <div class="card-header">
+                <h3><i class="bi bi-table"></i> Confusion: Workout</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(3).png', 'Workout Plan Confusion Matrix')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(3).png', 'Workout Plan Confusion Matrix')">
+                <img src="../static/graphs/download%20(3).png" alt="workout confusion matrix" loading="lazy">
+            </div>
+            <div class="graph-description">
+                True vs predicted labels for workout plan classifier – shows misclassifications.
+            </div>
+        </div>
+
+        <!-- card 5: confusion matrix for Nutrition plan class -->
+        <div class="graph-card" data-graph="5">
+            <div class="card-header">
+                <h3><i class="bi bi-table"></i> Confusion: Nutrition</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(4).png', 'Nutrition Plan Confusion Matrix')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(4).png', 'Nutrition Plan Confusion Matrix')">
+                <img src="../static/graphs/download%20(4).png" alt="nutrition confusion matrix" loading="lazy">
+            </div>
+            <div class="graph-description">
+                Confusion matrix for nutrition plan model – performance per class.
+            </div>
+        </div>
+
+        <!-- card 6: Accuracy of all models -->
+        <div class="graph-card" data-graph="6">
+            <div class="card-header">
+                <h3><i class="bi bi-trophy"></i> Accuracy</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(5).png', 'Model Accuracy Comparison')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(5).png', 'Model Accuracy Comparison')">
+                <img src="../static/graphs/download%20(5).png" alt="accuracy comparison" loading="lazy">
+            </div>
+            <div class="graph-description">
+                Overall accuracy for workout plan and nutrition plan models.
+            </div>
+        </div>
+
+        <!-- card 7: Precision of all models -->
+        <div class="graph-card" data-graph="7">
+            <div class="card-header">
+                <h3><i class="bi bi-bullseye"></i> Precision</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(6).png', 'Model Precision Comparison')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(6).png', 'Model Precision Comparison')">
+                <img src="../static/graphs/download%20(6).png" alt="precision comparison" loading="lazy">
+            </div>
+            <div class="graph-description">
+                Precision (positive predictive value) for both classification tasks.
+            </div>
+        </div>
+
+        <!-- card 8: Recall of all models -->
+        <div class="graph-card" data-graph="8">
+            <div class="card-header">
+                <h3><i class="bi bi-arrow-return-left"></i> Recall</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(7).png', 'Model Recall Comparison')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(7).png', 'Model Recall Comparison')">
+                <img src="../static/graphs/download%20(7).png" alt="recall comparison" loading="lazy">
+            </div>
+            <div class="graph-description">
+                Recall (sensitivity) for workout and nutrition models.
+            </div>
+        </div>
+
+        <!-- card 9: F1 scores of all models -->
+        <div class="graph-card" data-graph="9">
+            <div class="card-header">
+                <h3><i class="bi bi-stars"></i> F1 scores</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(8).png', 'Model F1 Comparison')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(8).png', 'Model F1 Comparison')">
+                <img src="../static/graphs/download%20(8).png" alt="f1 score comparison" loading="lazy">
+            </div>
+            <div class="graph-description">
+                Harmonic mean of precision & recall – balanced metric for both models.
+            </div>
+        </div>
+
+        <!-- card 10: XAI - SHAP -->
+        <div class="graph-card" data-graph="10">
+            <div class="card-header">
+                <h3><i class="bi bi-shield-shaded"></i> XAI – SHAP</h3>
+                <button class="zoom-btn" onclick="zoomGraph('../static/graphs/download%20(9).png', 'SHAP Feature Importance')"><i class="bi bi-arrows-angle-expand"></i></button>
+            </div>
+            <div class="graph-image" onclick="zoomGraph('../static/graphs/download%20(9).png', 'SHAP Feature Importance')">
+                <img src="../static/graphs/download%20(9).png" alt="shap explanation" loading="lazy">
+            </div>
+            <div class="graph-description">
+                SHAP summary plot – feature contributions to model predictions (explainability).
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ZOOM MODAL -->
+<div id="imageModal" class="modal" onclick="closeModalOnClickOutside(event)">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage" alt="zoomed graph">
+    <!-- <div style="color: #c7a965; text-align: center; margin-top: 10px; font-size: 1.3rem; font-weight: 400;" id="modalCaption"></div> -->
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-copy">
+            <i class="bi bi-c-circle"></i> 2026 fitPredict — Machine learning fitness modeling
+        </div>
+    </div>
+</footer>
+
+<!-- ZOOM JAVASCRIPT (clean, no validation) -->
+<script>
+    // Get modal elements
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+
+    // Zoom function called from buttons and image click
+    function zoomGraph(src, title) {
+        modal.style.display = 'flex';
+        modalImg.src = src;
+        modalCaption.innerText = title || 'Graph zoom';
+    }
+
+    // Close modal when clicking on X
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside the image (but not on the image itself)
+    function closeModalOnClickOutside(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+
+    // optional: close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
+
+    // Ensure all images have fallback if missing (optional)
+    // Not needed for functionality, but we keep it clean.
+</script>
+
+<!-- note: no javascript form validation, just zoom & modal -->
+</body>
+</html>

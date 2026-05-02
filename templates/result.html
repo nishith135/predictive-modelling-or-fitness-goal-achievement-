@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fitPredict · Your Personalized Plan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR (identical to home) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="bi bi-activity"></i>
+                fitPredict
+            </div>
+            <div class="nav-links">
+                <a href="/home"><i class="bi bi-house-door"></i> Home</a>
+                <a href="/graphs"><i class="bi bi-bar-chart-steps"></i> Graphs</a>
+                <a href="../static/Notebook.html"><i class="bi bi-journal-bookmark-fill"></i> Notebook</a>
+                <a href="/"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Personalized Plan</h1>
+            <span class="page-tagline">results · regime · guidance</span>
+            <p>AI-powered fitness and nutrition recommendations tailored specifically to your profile, goals, and
+                lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-container">
+        <div class="result-card">
+            <!-- header with project title -->
+            <div class="header">
+                <i class="bi bi-clipboard2-heart-fill"></i>
+                <h1>your personalized plan <span>based on your profile</span></h1>
+            </div>
+
+            <!-- level summary badges (workout + nutrition level) -->
+            <div class="level-summary">
+                <div class="level-item">
+                    <i class="bi bi-bicycle"></i>
+                    <span class="level-label">Workout plan</span>
+                    <span class="level-value">{{ workout_result }}</span>
+                </div>
+                <div class="level-item">
+                    <i class="bi bi-cup-straw"></i>
+                    <span class="level-label">Nutrition plan</span>
+                    <span class="level-value">{{ nutrition_result }}</span>
+                </div>
+            </div>
+
+            <!-- display user input summary (based on given inputs) to add context -->
+            <div class="user-context">
+                <div class="context-item"><i class="bi bi-person"></i> age {{ age }}, {{ gender }}</div>
+                <div class="context-item"><i class="bi bi-bullseye"></i> goal: {{ goal }}</div>
+                <div class="context-item"><i class="bi bi-activity"></i> activity: {{ activity_level }}</div>
+                <div class="context-item"><i class="bi bi-clock"></i> {{ time_available }} min/day</div>
+                <div class="context-item"><i class="bi bi-cake2"></i> protein: {{ protein_intake_g }}g</div>
+                <div class="context-item"><i class="bi bi-droplet"></i> water: {{ water_intake_liters }}L</div>
+            </div>
+
+            <!-- main recommendation grid: workout & nutrition plans stacked vertically -->
+            <div class="plans-container">
+                <!-- WORKOUT PLAN CARD (shown only if workout_result != "None") -->
+                {% if workout_result != "None" %}
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <i class="bi bi-bicycle"></i>
+                        <h2>workout plan · {{ workout_result }} intensity</h2>
+                    </div>
+
+                    <div class="plan-content">
+                        <!-- Workout Overview Section -->
+                        <div class="info-section">
+                            <div class="section-header">
+                                <i class="bi bi-clipboard-data"></i>
+                                <h3>Training Overview</h3>
+                            </div>
+                            <div class="info-grid">
+                                <!-- Enhanced workout recommendations based on level + user context -->
+                                {% if workout_result == "Low" %}
+                                <div class="info-item">
+                                    <i class="bi bi-calendar-week"></i>
+                                    <div class="info-content">
+                                        <strong>Frequency:</strong> 2-3 sessions per week (full body routines)
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-trophy"></i>
+                                    <div class="info-content">
+                                        <strong>Foundation Exercises:</strong> Push-ups, bodyweight squats, lunges,
+                                        planks, glute bridges
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-heart-pulse"></i>
+                                    <div class="info-content">
+                                        <strong>Cardio:</strong> 20-30 minutes light cardio (brisk walking, cycling,
+                                        elliptical)
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-graph-up"></i>
+                                    <div class="info-content">
+                                        <strong>Progression:</strong> Focus on proper form, gradually increase
+                                        repetitions (8-12 reps per set)
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-clock-history"></i>
+                                    <div class="info-content">
+                                        <strong>Rest Periods:</strong> 60-90 seconds between sets
+                                    </div>
+                                </div>
+                                {% elif workout_result == "Medium" %}
+                                <div class="info-item">
+                                    <i class="bi bi-calendar-week"></i>
+                                    <div class="info-content">
+                                        <strong>Frequency:</strong> 4 sessions per week (upper/lower body split)
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-lightning"></i>
+                                    <div class="info-content">
+                                        <strong>Strength Training:</strong> Dumbbell exercises, resistance machines,
+                                        bodyweight progressions
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-speedometer2"></i>
+                                    <div class="info-content">
+                                        <strong>HIIT Protocol:</strong> 20 minutes high-intensity intervals (30s work,
+                                        30s rest)
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-arrow-up-circle"></i>
+                                    <div class="info-content">
+                                        <strong>Progressive Overload:</strong> Increase weight by 5-10% weekly, add 1-2
+                                        reps per set
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                    <div class="info-content">
+                                        <strong>Recovery:</strong> Active recovery days with light stretching and
+                                        mobility work
+                                    </div>
+                                </div>
+                                {% elif workout_result == "High" %}
+                                <div class="info-item">
+                                    <i class="bi bi-calendar-week"></i>
+                                    <div class="info-content">
+                                        <strong>Frequency:</strong> 5-6 sessions per week (push/pull/legs split)
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-barbell"></i>
+                                    <div class="info-content">
+                                        <strong>Compound Lifts:</strong> Barbell squats, deadlifts, bench press,
+                                        overhead press, rows
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-lightning-charge"></i>
+                                    <div class="info-content">
+                                        <strong>Advanced Techniques:</strong> Drop sets, supersets, pyramid training,
+                                        tempo variations
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-calendar3"></i>
+                                    <div class="info-content">
+                                        <strong>Periodization:</strong> 4-week strength blocks, 1-week deload, then
+                                        intensity increase
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-trophy-fill"></i>
+                                    <div class="info-content">
+                                        <strong>Sport-Specific:</strong> {% if goal == "muscle gain" %}Hypertrophy focus
+                                        (8-12 reps){% elif goal == "endurance" %}Strength endurance (15-20 reps){% else
+                                        %}Athletic performance{% endif %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Goal-Specific Adaptations -->
+                        {% if goal == "muscle gain" or goal == "fat loss" or goal == "endurance" %}
+                        <div class="info-section">
+                            <div class="section-header">
+                                <i class="bi bi-bullseye"></i>
+                                <h3>Goal-Specific Adjustments</h3>
+                            </div>
+                            <div class="info-grid">
+                                {% if workout_result == "Low" %}
+                                {% if goal == "muscle gain" %}
+                                <div class="info-item highlight">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                    <div class="info-content">
+                                        For muscle gain, add resistance bands and focus on progressive overload
+                                    </div>
+                                </div>
+                                {% elif goal == "fat loss" %}
+                                <div class="info-item highlight">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                    <div class="info-content">
+                                        For fat loss, increase cardio to 30-40 minutes and add bodyweight circuits
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% elif workout_result == "Medium" %}
+                                {% if goal == "muscle gain" %}
+                                <div class="info-item highlight">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                    <div class="info-content">
+                                        Muscle gain: Target 8-10 reps per set, focus on time under tension
+                                    </div>
+                                </div>
+                                {% elif goal == "endurance" %}
+                                <div class="info-item highlight">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                    <div class="info-content">
+                                        Endurance: Add circuit training and reduce rest to 45 seconds
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% elif workout_result == "High" %}
+                                {% if experience_level == "advanced" %}
+                                <div class="info-item highlight">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                    <div class="info-content">
+                                        Advanced: Implement accessory work and isolation exercises for weak points
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Lifestyle Adaptations -->
+                        <div class="info-section">
+                            <div class="section-header">
+                                <i class="bi bi-person-badge"></i>
+                                <h3>Personalized Adaptations</h3>
+                            </div>
+                            <div class="info-grid">
+                                <!-- Time-based adaptations -->
+                                {% if time_available|int < 30 %} <div class="info-item warning">
+                                    <i class="bi bi-exclamation-triangle-fill"></i>
+                                    <div class="info-content">
+                                        <strong>Time Constraint:</strong> Focus on compound movements, supersets, and
+                                        circuit training
+                                    </div>
+                            </div>
+                            {% elif time_available|int > 75 %}
+                            <div class="info-item info">
+                                <i class="bi bi-info-circle-fill"></i>
+                                <div class="info-content">
+                                    <strong>Extended Sessions:</strong> Add accessory exercises, mobility work, and
+                                    stretching
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            <!-- Equipment-based adaptations -->
+                            {% if equipment_available_count|int < 2 %} <div class="info-item info">
+                                <i class="bi bi-info-circle-fill"></i>
+                                <div class="info-content">
+                                    <strong>Limited Equipment:</strong> Bodyweight exercises, resistance bands, and
+                                    creative variations
+                                </div>
+                        </div>
+                        {% elif equipment_available_count|int > 4 %}
+                        <div class="info-item info">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                <strong>Well-Equipped:</strong> Utilize machines, cables, and varied equipment for
+                                muscle confusion
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- NUTRITION PLAN CARD (shown only if nutrition_result != "None") -->
+        {% if nutrition_result != "None" %}
+        <div class="plan-card">
+            <div class="plan-header">
+                <i class="bi bi-cup-straw"></i>
+                <h2>nutrition plan · {{ nutrition_result }} guidance</h2>
+            </div>
+
+            <div class="plan-content">
+                <!-- Nutrition Overview Section -->
+                <div class="info-section">
+                    <div class="section-header">
+                        <i class="bi bi-egg-fried"></i>
+                        <h3>Nutrition Overview</h3>
+                    </div>
+                    <div class="info-grid">
+                        {% if nutrition_result == "Low" %}
+                        <div class="info-item">
+                            <i class="bi bi-pie-chart"></i>
+                            <div class="info-content">
+                                <strong>Macro Distribution:</strong> 40% carbohydrates, 30% protein, 30% healthy fats
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-hand-index"></i>
+                            <div class="info-content">
+                                <strong>Portion Control:</strong> Use hand-sized portions, reduce processed foods by 50%
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-flower1"></i>
+                            <div class="info-content">
+                                <strong>Plant-Based Focus:</strong> 5+ servings of fruits and vegetables daily, rainbow
+                                colors
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-droplet"></i>
+                            <div class="info-content">
+                                <strong>Hydration:</strong> {{ water_intake_liters }}L daily (add 500ml if active)
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-clock"></i>
+                            <div class="info-content">
+                                <strong>Meal Timing:</strong> 3 balanced meals, optional light snack if hungry
+                            </div>
+                        </div>
+                        {% elif nutrition_result == "Medium" %}
+                        <div class="info-item">
+                            <i class="bi bi-egg"></i>
+                            <div class="info-content">
+                                <strong>Protein Target:</strong> {{ "%.0f"|format(weight|float * 1.6) }}g daily (based
+                                on body weight)
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-arrow-left-right"></i>
+                            <div class="info-content">
+                                <strong>Carb Cycling:</strong> Higher carbs on training days ({{ time_available|int + 20
+                                }}g), lower on rest days
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-droplet-half"></i>
+                            <div class="info-content">
+                                <strong>Healthy Fats:</strong> Avocado, nuts, olive oil (25-30% of total calories)
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-bell"></i>
+                            <div class="info-content">
+                                <strong>Nutrient Timing:</strong> Pre-workout meal 90min before, post-workout within
+                                30min
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-seedling"></i>
+                            <div class="info-content">
+                                <strong>Fiber Intake:</strong> 25-35g daily from whole grains, legumes, vegetables
+                            </div>
+                        </div>
+                        {% elif nutrition_result == "High" %}
+                        <div class="info-item">
+                            <i class="bi bi-calculator"></i>
+                            <div class="info-content">
+                                <strong>Precision Tracking:</strong> {{ "%.0f"|format(weight|float * 2.2) }}g protein,
+                                calculated carbs and fats
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-calendar2-week"></i>
+                            <div class="info-content">
+                                <strong>Meal Frequency:</strong> 5-6 smaller meals every 2.5-3 hours
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-capsule"></i>
+                            <div class="info-content">
+                                <strong>Supplementation:</strong> Creatine 5g daily, omega-3 2g, vitamin D3 if deficient
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-lightning"></i>
+                            <div class="info-content">
+                                <strong>Performance Nutrition:</strong> BCAAs intra-workout, fast-acting carbs
+                                post-workout
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="bi bi-shield-check"></i>
+                            <div class="info-content">
+                                <strong>Recovery Focus:</strong> Anti-inflammatory foods, antioxidants, quality sleep
+                                nutrition
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Goal-Specific Nutrition -->
+                {% if goal == "muscle gain" or goal == "fat loss" %}
+                <div class="info-section">
+                    <div class="section-header">
+                        <i class="bi bi-bullseye"></i>
+                        <h3>Goal-Specific Nutrition</h3>
+                    </div>
+                    <div class="info-grid">
+                        {% if nutrition_result == "Low" %}
+                        {% if goal == "fat loss" %}
+                        <div class="info-item highlight">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                For fat loss: Create 300-500 calorie deficit through portion reduction
+                            </div>
+                        </div>
+                        {% elif goal == "muscle gain" %}
+                        <div class="info-item highlight">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                For muscle gain: Add 1-2 protein snacks, maintain slight calorie surplus
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% elif nutrition_result == "Medium" %}
+                        {% if goal == "muscle gain" %}
+                        <div class="info-item highlight">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                Muscle gain: 20-30g protein within 30min post-workout for optimal recovery
+                            </div>
+                        </div>
+                        {% elif goal == "endurance" %}
+                        <div class="info-item highlight">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                Endurance: Focus on complex carbs for sustained energy
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% elif nutrition_result == "High" %}
+                        {% if goal == "muscle gain" %}
+                        <div class="info-item highlight">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                Bulking: 300-500 calorie surplus, prioritize protein and complex carbs
+                            </div>
+                        </div>
+                        {% elif goal == "fat loss" %}
+                        <div class="info-item highlight">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                Cutting: 500-750 calorie deficit, maintain high protein to preserve muscle
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Personalized Nutrition Adaptations -->
+                <div class="info-section">
+                    <div class="section-header">
+                        <i class="bi bi-person-badge"></i>
+                        <h3>Personalized Adaptations</h3>
+                    </div>
+                    <div class="info-grid">
+                        <!-- Dietary preference adaptations -->
+                        {% if dietary_preference == "veg" or dietary_preference == "vegan" %}
+                        <div class="info-item info">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                <strong>Plant-Based:</strong> Combine legumes+grains for complete proteins, consider B12
+                                supplementation
+                            </div>
+                        </div>
+                        {% elif dietary_preference == "non-veg" %}
+                        <div class="info-item info">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                <strong>Omnivore:</strong> Include lean meats, fatty fish 2x/week, vary protein sources
+                            </div>
+                        </div>
+                        {% elif dietary_preference == "pescatarian" %}
+                        <div class="info-item info">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                <strong>Pescatarian:</strong> Focus on omega-3 rich fish, supplement with plant proteins
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Health condition adaptations -->
+                        {% if health_condition == "diabetes" %}
+                        <div class="info-item warning">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <div class="info-content">
+                                <strong>Diabetes Management:</strong> Low glycemic index foods, consistent meal timing,
+                                monitor blood sugar
+                            </div>
+                        </div>
+                        {% elif health_condition == "hypertension" %}
+                        <div class="info-item warning">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <div class="info-content">
+                                <strong>Blood Pressure:</strong> Limit sodium to 1500mg, increase potassium-rich foods
+                            </div>
+                        </div>
+                        {% elif health_condition == "heart disease" %}
+                        <div class="info-item warning">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <div class="info-content">
+                                <strong>Heart Health:</strong> Focus on omega-3s, limit saturated fats, increase soluble
+                                fiber
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Age-based adaptations -->
+                        {% if age|int > 50 %}
+                        <div class="info-item info">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                <strong>50+ Nutrition:</strong> Increase calcium, vitamin D, reduce overall calories
+                                slightly
+                            </div>
+                        </div>
+                        {% elif age|int < 25 %} <div class="info-item info">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <div class="info-content">
+                                <strong>Youth Metabolism:</strong> Higher calorie needs, focus on nutrient-dense foods
+                            </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    </div>
+
+    <!-- message for cases where one plan is "None" (user still gets full picture) -->
+    <div class="recommendation-tag">
+        <p><i class="bi bi-chat-square-quote-fill"></i>
+            {% if workout_result == "None" and nutrition_result != "None" %}
+            You're currently focused on nutrition adjustments. Continue your daily activity and follow the meal
+            guidelines.
+            {% elif nutrition_result == "None" and workout_result != "None" %}
+            Your plan emphasises physical training. Maintain your usual eating habits while progressing with workouts.
+            {% elif workout_result == "None" and nutrition_result == "None" %}
+            You're on track! We recommend general wellness: light movement and mindful eating.
+            {% else %}
+            Integrated approach: combine both plans for optimal results. Listen to your body.
+            {% endif %}
+        </p>
+    </div>
+
+    <!-- back button + optional extra insight (based on user input) -->
+    <div style="display: flex; justify-content: center;">
+        <a href="/home" class="back-button"><i class="bi bi-arrow-left-short"></i> Go Back</a>
+    </div>
+
+
+    
+
+    <!-- tiny note: example placeholders used for dynamic data (jinja2) -->
+    <!-- all variables: workout_result, nutrition_result, age, gender, goal, activity_level, time_available, protein_intake_g, water_intake_liters, weight, dietary_preference etc. -->
+    </div>
+
+</body>
+
+</html>

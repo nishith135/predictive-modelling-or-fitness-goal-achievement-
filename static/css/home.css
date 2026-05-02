@@ -1,0 +1,479 @@
+/* Home Page Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== NEW COLOR PALETTE (professional dark + warm neutrals, no blue/green) ===== */
+:root {
+    --bg-site: #1a1a1a;               /* deep charcoal background */
+    --surface: #242424;                /* card background – dark gray */
+    --navbar-bg: #0c0c0c;               /* almost black */
+    --navbar-text: #eaeaea;
+    --hero-overlay: rgba(15, 15, 15, 0.75); /* rich dark overlay */
+    --card-bg: #2a2a2a;                  /* form card background */
+    --border-light: #404040;              /* subtle border */
+    --input-bg: #1e1e1e;                  /* input fields */
+    --text-primary: #f0f0f0;               /* almost white */
+    --text-secondary: #bbbbbb;              /* light gray */
+    --accent-soft: #c7a965;                  /* burnished gold – warm accent */
+    --accent-hover: #b8924c;                  /* deeper gold */
+    --footer-bg: #181818;                    /* dark footer */
+    --footer-text: #aaaaaa;
+    --error-bg: #3d2a27;
+    --error-border: #a1665e;
+    --error-text: #ffc9c2;
+    --btn-bg: #4a3f33;                       /* dark taupe */
+    --btn-border: #635749;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: var(--bg-site);
+    color: var(--text-primary);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === NAVBAR (clean, with bootstrap icons) === */
+.navbar {
+    background-color: var(--navbar-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.nav-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: color 0.3s;
+}
+
+.logo a i, .logo a .bi {
+    font-size: 2rem;
+    color: var(--accent-soft);
+}
+
+.logo a:hover {
+    color: var(--accent-soft);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.8rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #cfcfcf;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.15rem;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+}
+
+.nav-links a i, .nav-links a .bi {
+    font-size: 1.25rem;
+    color: var(--accent-soft);
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    border-bottom-color: var(--accent-soft);
+    transform: translateY(-2px);
+}
+
+/* === HERO SECTION – TALLER, with project title & animation === */
+.hero {
+    background: linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+                url('/static/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    background-attachment: fixed;  /* subtle parallax effect */
+    padding: 6rem 2rem;            /* increased height */
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid #3d3d3d;
+    animation: heroGlow 8s infinite alternate ease-in-out;
+}
+
+@keyframes heroGlow {
+    0% { box-shadow: inset 0 0 30px rgba(0,0,0,0.7); }
+    100% { box-shadow: inset 0 0 60px rgba(199,169,101,0.2); }
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 4px 12px #000000;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-content .project-title {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 350;
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-top: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    animation: fadeInUp 1s 0.2s both;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    max-width: 750px;
+    margin: 1.8rem auto 0;
+    color: #e0dcd5;
+    font-weight: 350;
+    text-shadow: 1px 2px 8px black;
+    animation: fadeIn 1.2s 0.3s both;
+}
+
+/* animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* === MAIN CONTAINER – BIGGER SIZE === */
+.main-container {
+    max-width: 1600px;            /* increased from 1400 to 1600 */
+    margin: 3.5rem auto 4rem;
+    padding: 0 2.2rem;
+    flex: 1;
+    width: 90%;
+}
+
+.form-card {
+    background-color: var(--card-bg);
+    border-radius: 32px;
+    padding: 3rem 3.5rem;          /* more padding */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(199,169,101,0.2);
+    border: 1px solid #4d4d4d;
+    transition: box-shadow 0.4s;
+}
+
+.form-card:hover {
+    box-shadow: 0 30px 60px -12px #000000, 0 0 0 2px rgba(199,169,101,0.3);
+}
+
+.form-card h2 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-bottom: 0.6rem;
+    color: #f5f5f5;
+    border-left: 8px solid var(--accent-soft);
+    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-card h2 i, .form-card h2 .bi {
+    font-size: 2.2rem;
+    color: var(--accent-soft);
+}
+
+.subhead {
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    padding-left: 2.4rem;
+    border-bottom: 1px dashed #4f4f4f;
+    padding-bottom: 1rem;
+}
+
+.error {
+    background: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+    border-radius: 40px;
+    padding: 1.1rem 2rem;
+    margin-bottom: 2.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    backdrop-filter: blur(4px);
+}
+
+.error i, .error .bi {
+    font-size: 1.6rem;
+}
+
+/* === FORM GRID – 3 columns, wider fields === */
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 2.5rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: transform 0.2s;
+}
+
+.field:hover {
+    transform: translateY(-3px);
+}
+
+.full {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #c7b59e;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+label i, label .bi {
+    font-size: 1.2rem;
+    color: var(--accent-soft);
+}
+
+input, select {
+    width: 100%;
+    padding: 1rem 1.3rem;          /* larger input fields */
+    background-color: var(--input-bg);
+    border: 2px solid var(--border-light);
+    border-radius: 28px;             /* more rounded */
+    font-size: 1.05rem;
+    color: #f0f0f0;
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: inherit;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-soft);
+    box-shadow: 0 0 0 5px rgba(199, 169, 101, 0.3), inset 0 2px 5px #000;
+    background-color: #262626;
+}
+
+/* change spinners to text type, but keep numeric semantics — we use type=text as requested, but appearance none */
+input[type="text"] {
+    -moz-appearance: textfield;
+}
+input[type="text"]::-webkit-outer-spin-button,
+input[type="text"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* for select, custom arrow */
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23c7a965' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1.2rem) center;
+    background-size: 1.2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* neutral accent button (goldish, no blue/green) */
+button {
+    width: 100%;
+    padding: 1.3rem 2.5rem;
+    background-color: var(--btn-bg);
+    color: #f5eee6;
+    border: none;
+    border-radius: 60px;
+    font-size: 1.8rem;
+    font-weight: 550;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    border: 2px solid var(--btn-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 10px 20px -5px #000000;
+}
+
+button i, button .bi {
+    font-size: 2rem;
+    color: var(--accent-soft);
+    transition: transform 0.3s;
+}
+
+button:hover {
+    background-color: #5e5243;
+    border-color: #c7a965;
+    transform: scale(1.02);
+    box-shadow: 0 20px 30px -8px black;
+}
+
+button:hover i {
+    transform: rotate(5deg) scale(1.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* responsive for smaller screens */
+@media (max-width: 1200px) {
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .hero-content .project-title {
+        font-size: 1.8rem;
+        letter-spacing: 5px;
+    }
+}
+
+@media (max-width: 760px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+    .hero-content h1 {
+        font-size: 2.6rem;
+    }
+    .form-card {
+        padding: 2rem;
+    }
+    .nav-links {
+        gap: 1.2rem;
+    }
+}
+
+/* === FOOTER with bootstrap icons & animation === */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 2.5rem 2rem 2rem;
+    margin-top: 3rem;
+    border-top: 3px solid #3e3a33;
+    box-shadow: 0 -10px 25px -5px #0a0a0a;
+}
+
+.footer-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-copy {
+    font-size: 1.05rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-copy i, .footer-copy .bi {
+    color: var(--accent-soft);
+    font-size: 1.4rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2.8rem;
+}
+
+.footer-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 1px dotted transparent;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-links a i, .footer-links a .bi {
+    color: var(--accent-soft);
+    font-size: 1.2rem;
+}
+
+.footer-links a:hover {
+    border-bottom-color: var(--accent-soft);
+    color: #ececec;
+    transform: translateY(-3px);
+}
+
+.footer-small {
+    text-align: center;
+    width: 100%;
+    margin-top: 2.2rem;
+    font-size: 0.95rem;
+    color: #7a7265;
+    border-top: 1px dashed #4f4b43;
+    padding-top: 1.5rem;
+}
+
+/* additional micro-animation for icons */
+.bi {
+    transition: transform 0.2s;
+}
+a:hover .bi {
+    transform: scale(1.2);
+}

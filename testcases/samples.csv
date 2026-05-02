@@ -1,0 +1,164 @@
+age,gender,weight,height,bmi,goal,health_condition,activity_level,experience_level,dietary_preference,sleep_hours,workout_type_preference,equipment_available_count,time_available,has_allergy,has_digestive_issue,smoking,cigarettes_per_day,alcohol,alcohol_units_per_week,micronutrient_score,protein_intake_g,steps_per_day,water_intake_liters,workout_plan_level,nutrition_plan_level,predicted_workout_plan_encoded,predicted_workout_plan,predicted_nutrition_plan_encoded,predicted_nutrition_plan
+60,male,73.7,1.61,28.43,endurance,hypertension,low,advanced,vegan,5.5,functional,3,98,0,0,0,0,0,0,0.92,182.1,16485,2.49,Medium,None,2,Medium,3,None
+17,female,121,1.97,31.18,endurance,heart disease,moderate,beginner,veg,6.9,functional,4,105,0,0,0,0,0,0,0.76,167.7,14256,2.04,None,None,3,None,3,None
+43,male,110,1.52,47.61,general fitness,none,low,beginner,non-veg,6,strength,1,88,0,0,0,0,0,0,0.34,104.9,3050,2.53,Low,Low,1,Low,1,Low
+49,other,73.6,1.96,19.16,general fitness,none,moderate,beginner,non-veg,5.7,functional,5,96,0,0,0,0,0,0,0.71,59.5,2264,3.36,None,None,3,None,3,None
+53,female,80.8,1.76,26.08,endurance,hypertension,high,beginner,pescatarian,5.8,balance,3,120,0,1,1,8.7,0,0,0.98,51.1,12774,1.9,Medium,None,2,Medium,3,None
+32,male,134.8,1.61,52,fat loss,none,moderate,advanced,pescatarian,9,flexibility,2,15,0,1,1,6.1,0,0,0.22,152.4,7525,1.34,Medium,Medium,2,Medium,2,Medium
+34,female,101.9,2.05,24.25,general fitness,hypertension,high,intermediate,pescatarian,8.3,flexibility,4,23,0,0,0,0,0,0,0.51,205.6,11066,1.52,Low,None,1,Low,3,None
+57,female,120.6,1.72,40.77,muscle gain,injury,moderate,intermediate,non-veg,5,functional,1,32,1,0,0,0,1,16.6,0.79,54.9,10772,2.23,Low,High,1,Low,0,High
+74,male,86.4,1.85,25.24,fat loss,none,low,beginner,vegan,8.5,functional,5,116,0,0,0,0,1,8.8,0.63,109.8,7243,2.04,None,Medium,3,None,2,Medium
+72,female,99.2,1.73,33.15,muscle gain,heart disease,moderate,beginner,veg,7,strength,1,94,1,0,1,1.7,1,13.5,0.21,144.6,8474,4.29,Medium,High,2,Medium,0,High
+37,female,69.9,1.52,30.25,endurance,none,low,advanced,non-veg,8.9,flexibility,4,75,0,0,0,0,0,0,0.97,216.3,2632,3.78,Low,None,1,Low,3,None
+48,female,90.8,1.7,31.42,general fitness,injury,high,advanced,vegan,6.9,cardio,3,40,1,0,0,0,1,3.7,0.16,144.1,13432,2.29,Medium,Medium,2,Medium,2,Medium
+47,female,82.3,1.97,21.21,endurance,none,low,advanced,non-veg,5.8,strength,4,57,0,0,0,0,1,21.2,0.63,114.2,13190,1.44,Low,None,1,Low,3,None
+64,male,135.3,1.93,36.32,muscle gain,none,low,intermediate,non-veg,9.3,flexibility,3,32,0,0,0,0,0,0,0.92,96.6,6602,2.12,Low,Medium,1,Low,2,Medium
+62,female,108.1,1.51,47.41,general fitness,none,low,beginner,non-veg,8.6,flexibility,2,105,0,0,0,0,0,0,0.66,97.2,6609,4.48,Low,None,1,Low,3,None
+24,female,113.1,2.04,27.18,muscle gain,diabetes,low,beginner,vegan,5.2,balance,1,120,0,0,1,5.3,0,0,0.62,137.6,6362,4.17,Low,Low,1,Low,1,Low
+47,female,138.3,1.82,41.75,muscle gain,pcos,moderate,beginner,non-veg,9,balance,2,38,0,0,0,0,1,7.4,0.14,186,3566,1.13,Low,High,1,Low,0,High
+61,female,86.1,1.93,23.11,endurance,none,low,beginner,non-veg,9.4,strength,2,62,0,0,0,0,0,0,0.23,129.6,5295,4.15,None,None,3,None,3,None
+47,female,89.7,1.62,34.18,muscle gain,none,moderate,beginner,vegan,7.6,flexibility,0,72,0,0,1,1.4,0,0,0.95,172.7,8483,1.57,Low,Medium,1,Low,2,Medium
+62,female,55,1.65,20.2,general fitness,asthma,high,beginner,pescatarian,6.3,flexibility,6,93,0,0,0,0,1,15.3,0.9,165.5,4685,1.42,Medium,None,2,Medium,3,None
+40,male,91.5,1.66,33.21,fat loss,none,moderate,advanced,non-veg,6.2,cardio,3,87,0,0,0,0,0,0,0.16,141.6,15086,1.61,Medium,Medium,2,Medium,2,Medium
+34,female,132.5,1.74,43.76,muscle gain,none,high,intermediate,non-veg,6.8,hiit,3,40,0,0,0,0,0,0,0.95,106,10068,1.37,Medium,Medium,2,Medium,2,Medium
+29,male,102.9,2.01,25.47,muscle gain,hypertension,low,intermediate,pescatarian,8.8,balance,2,15,0,1,0,0,0,0,0.19,40.1,10436,3.25,None,Medium,3,None,2,Medium
+51,male,120.2,1.65,44.15,muscle gain,hypertension,low,advanced,veg,7.8,balance,1,67,0,1,0,0,0,0,0.13,45.4,17525,3.74,Medium,High,2,Medium,0,High
+47,female,130,1.58,52.07,muscle gain,hypertension,low,beginner,non-veg,9,hiit,2,31,0,0,0,0,0,0,0.62,73,7024,1.44,Low,Medium,1,Low,2,Medium
+31,female,49.3,1.57,20,fat loss,none,moderate,intermediate,veg,6.4,functional,5,26,1,0,0,0,1,10,0.34,160.9,8891,1.47,None,Medium,3,None,2,Medium
+19,female,73.7,2.01,18.24,muscle gain,none,high,intermediate,vegan,6.7,cardio,4,89,0,0,0,0,1,10.8,1,213.5,12065,3.96,Medium,Medium,2,Medium,2,Medium
+64,female,85.7,2.02,21,muscle gain,none,high,beginner,non-veg,4.6,functional,2,25,1,0,1,12.1,0,0,0.22,146.5,5700,1.49,Medium,Medium,2,Medium,2,Medium
+70,female,112.1,2.04,26.94,fat loss,hypertension,high,intermediate,veg,6.7,functional,1,32,1,0,0,0,1,1,0.1,127.5,12233,1.49,Low,Medium,1,Low,2,Medium
+18,female,81,1.76,26.15,fat loss,none,moderate,intermediate,vegan,9.2,strength,5,40,1,1,1,2.6,0,0,0.4,144.9,8109,1.93,None,Low,3,None,1,Low
+17,male,127,1.9,35.18,fat loss,none,high,intermediate,non-veg,6.3,balance,2,68,0,0,1,14,1,1,0.53,44.5,12575,2.66,Medium,High,2,Medium,0,High
+35,male,120.8,1.91,33.11,endurance,none,moderate,intermediate,veg,7.5,cardio,0,117,1,0,1,8,0,0,0.69,192.8,9041,1.56,Low,None,1,Low,3,None
+54,female,82.4,1.86,23.82,general fitness,diabetes,low,beginner,vegan,4.7,balance,5,72,0,0,0,0,0,0,0.99,122.8,6493,1.19,None,None,3,None,3,None
+17,male,110.2,1.96,28.69,muscle gain,none,low,intermediate,non-veg,6.1,strength,4,100,0,1,0,0,0,0,0.21,139.8,11052,2.85,Low,Medium,1,Low,2,Medium
+35,male,104.1,1.91,28.54,endurance,none,high,beginner,pescatarian,7.8,balance,3,102,0,0,0,0,0,0,0.1,139.3,13100,3.32,Medium,None,2,Medium,3,None
+62,female,58.4,1.53,24.95,general fitness,injury,high,intermediate,non-veg,9.1,flexibility,0,32,0,0,0,0,0,0,0.6,162.7,9522,2.58,Low,None,1,Low,3,None
+71,male,112.5,1.6,43.95,muscle gain,none,low,beginner,non-veg,6,strength,1,57,0,0,0,0,0,0,0.18,57.5,14278,4.48,Low,High,1,Low,0,High
+63,male,118.6,1.81,36.2,muscle gain,none,moderate,beginner,vegan,7.2,functional,6,101,0,0,0,0,1,9.9,0.46,131.5,16676,3.9,Medium,Medium,2,Medium,2,Medium
+22,female,84.6,1.88,23.94,muscle gain,none,low,advanced,vegan,7.7,cardio,1,64,0,0,1,7.5,0,0,0,54,16219,1.95,Medium,Medium,2,Medium,2,Medium
+50,male,129.5,1.77,41.34,fat loss,hypertension,low,beginner,pescatarian,7.2,flexibility,5,101,0,0,0,0,1,24.5,0,109.6,14734,2.86,Low,High,1,Low,0,High
+75,male,127.1,1.95,33.43,muscle gain,asthma,low,intermediate,non-veg,8.4,functional,0,49,0,0,0,0,0,0,0.4,176.3,15097,2.91,Low,Medium,1,Low,2,Medium
+43,male,108.5,1.94,28.83,muscle gain,hypertension,low,beginner,pescatarian,5.6,balance,4,41,0,0,0,0,0,0,0.32,128.6,7723,3.55,None,Medium,3,None,2,Medium
+67,male,117.2,1.7,40.55,endurance,none,low,intermediate,pescatarian,7.9,hiit,1,115,1,0,1,4.1,1,7,0.5,218.8,11170,3.05,Low,Low,1,Low,1,Low
+53,female,57.5,1.94,15.28,muscle gain,none,high,intermediate,veg,5,strength,3,108,0,0,0,0,0,0,0.97,44.7,15279,2.9,Medium,Medium,2,Medium,2,Medium
+48,male,85.3,1.7,29.52,endurance,none,moderate,intermediate,vegan,6.6,cardio,2,64,0,0,1,14.3,1,5.1,0.98,44.2,7168,4.2,None,Medium,3,None,2,Medium
+36,female,97.4,1.7,33.7,endurance,heart disease,moderate,beginner,vegan,7.9,functional,0,63,0,0,0,0,0,0,0.1,44.9,4483,3.93,None,Medium,3,None,2,Medium
+69,female,120.3,2,30.08,fat loss,hypertension,high,intermediate,non-veg,8.8,strength,1,63,0,0,0,0,1,8.2,0.19,197.8,5391,3.66,Low,High,1,Low,0,High
+45,male,65.5,1.83,19.56,general fitness,none,low,beginner,non-veg,9,functional,6,110,0,0,0,0,0,0,0.66,87.2,9556,4.25,None,None,3,None,3,None
+42,male,84,1.58,33.65,muscle gain,none,high,intermediate,pescatarian,7.9,strength,6,115,0,1,0,0,0,0,0.61,46.3,7623,1.12,High,Medium,0,High,2,Medium
+49,female,106.4,1.51,46.66,general fitness,none,high,advanced,non-veg,7.7,hiit,0,23,0,0,0,0,0,0,0.77,110.9,9182,1.53,High,None,0,High,3,None
+48,male,139.7,1.9,38.7,muscle gain,asthma,low,intermediate,veg,7.2,functional,1,112,0,0,0,0,0,0,0.52,98.2,6542,2.79,Medium,Medium,2,Medium,2,Medium
+27,male,62.3,1.94,16.55,fat loss,none,moderate,beginner,non-veg,7.1,functional,0,107,1,1,1,16.7,1,15.5,0.56,180.9,7342,4.11,None,Medium,3,None,2,Medium
+55,female,108.8,1.9,30.14,muscle gain,injury,high,beginner,veg,9.1,cardio,2,74,0,0,0,0,1,23.2,0.09,168.8,1637,1.65,Medium,High,2,Medium,0,High
+18,female,135.9,2.03,32.98,muscle gain,asthma,low,beginner,non-veg,7.9,hiit,1,73,1,0,0,0,0,0,0.56,146.3,10909,2.05,Low,Medium,1,Low,2,Medium
+57,female,72.4,1.69,25.35,fat loss,none,moderate,intermediate,non-veg,8.2,hiit,3,50,0,0,0,0,0,0,0.52,154.8,4413,4.24,None,Low,3,None,1,Low
+20,female,58.7,1.7,20.31,muscle gain,none,low,intermediate,pescatarian,4.6,cardio,4,105,0,0,0,0,0,0,0.55,84.6,11717,4,Low,Low,1,Low,1,Low
+15,male,111.9,1.63,42.12,general fitness,hypertension,moderate,intermediate,vegan,4.6,cardio,6,42,1,0,0,0,1,13.1,0.43,210.4,8158,2.12,None,Low,3,None,1,Low
+26,male,46.4,1.76,14.98,general fitness,none,moderate,beginner,vegan,8.5,strength,4,66,0,0,0,0,0,0,0.25,99.7,9740,3.33,None,None,3,None,3,None
+49,male,122.9,1.93,32.99,general fitness,hypertension,low,beginner,pescatarian,5.3,balance,4,66,0,0,1,16.6,0,0,0.69,213.3,13218,1.04,None,None,3,None,3,None
+25,male,97.2,1.55,40.46,endurance,none,high,beginner,veg,4.6,flexibility,4,32,0,0,0,0,0,0,0.02,148.3,2824,1.39,Medium,Low,2,Medium,1,Low
+37,male,65.2,2.03,15.82,fat loss,none,moderate,beginner,pescatarian,6.6,flexibility,2,101,0,0,0,0,0,0,0.63,45.1,11606,2.66,None,Medium,3,None,2,Medium
+28,female,94.7,1.87,27.08,fat loss,injury,low,beginner,pescatarian,5,cardio,6,113,0,1,1,13.4,0,0,0.6,147.7,11465,4.14,None,Low,3,None,1,Low
+33,male,122.7,1.59,48.53,fat loss,none,moderate,intermediate,pescatarian,6.4,flexibility,4,34,0,0,0,0,0,0,0.18,175.6,2548,4.38,None,Medium,3,None,2,Medium
+51,female,113.8,2.02,27.89,endurance,pcos,high,intermediate,pescatarian,6.7,cardio,6,105,0,0,0,0,0,0,0.12,131.4,13155,3.6,Medium,None,2,Medium,3,None
+30,male,68.9,2.01,17.05,endurance,pcos,moderate,intermediate,non-veg,5.4,functional,2,56,0,0,0,0,0,0,0.17,72.7,9946,1.76,None,None,3,None,3,None
+58,female,73.5,1.98,18.75,general fitness,none,moderate,advanced,veg,8.6,cardio,0,82,0,0,0,0,0,0,0.82,94.8,13255,1.1,Medium,None,2,Medium,3,None
+42,female,59.4,1.98,15.15,endurance,none,low,beginner,non-veg,8.3,flexibility,3,111,1,0,0,0,1,21.3,0.6,49.2,10282,1.65,None,Low,3,None,1,Low
+59,male,60.9,1.81,18.59,muscle gain,none,low,beginner,pescatarian,8.5,strength,3,56,0,0,0,0,0,0,0.54,91.3,9028,2.76,None,Low,3,None,1,Low
+45,female,66.1,2.05,15.73,general fitness,none,high,intermediate,non-veg,5.2,functional,3,57,0,1,1,6.6,0,0,0.25,49.4,13549,2.09,Low,Low,1,Low,1,Low
+67,female,55.5,1.54,23.4,muscle gain,none,low,intermediate,vegan,4.8,strength,6,68,0,0,1,4.5,0,0,0.05,43.4,5200,3.2,None,Medium,3,None,2,Medium
+41,female,132,1.85,38.57,general fitness,none,moderate,intermediate,veg,8.9,flexibility,6,68,0,0,0,0,0,0,0.75,145.1,15411,2.72,None,None,3,None,3,None
+31,female,67.7,2,16.92,general fitness,diabetes,moderate,intermediate,non-veg,9,functional,3,60,0,0,0,0,0,0,0.4,194,3231,4.13,None,None,3,None,3,None
+21,male,127.9,1.64,47.55,endurance,none,high,beginner,non-veg,4.5,functional,4,64,0,0,1,1.6,0,0,0.91,102.3,8406,1.17,Medium,None,2,Medium,3,None
+67,male,60.4,2,15.1,general fitness,injury,moderate,beginner,veg,9.3,flexibility,3,76,0,0,0,0,1,17.3,0.89,93.9,16865,3.69,None,None,3,None,3,None
+54,female,101.5,1.7,35.12,general fitness,asthma,high,intermediate,pescatarian,6.3,flexibility,5,81,1,0,1,12.7,0,0,0.43,134.2,6658,1.25,Medium,None,2,Medium,3,None
+22,other,115.2,1.5,51.2,general fitness,injury,moderate,advanced,vegan,7.1,functional,6,56,1,0,0,0,0,0,0.97,56.9,3389,2.1,Medium,Low,2,Medium,1,Low
+58,male,67,1.93,17.99,general fitness,none,moderate,advanced,veg,5.4,cardio,0,108,1,0,0,0,1,23,0.07,157.1,15196,2.42,Medium,Low,2,Medium,1,Low
+73,female,130.6,2.03,31.69,muscle gain,none,high,advanced,non-veg,5.5,balance,0,21,1,0,0,0,1,23.2,0.95,113.3,8895,1.26,High,Medium,0,High,2,Medium
+70,female,46.9,1.64,17.44,muscle gain,none,moderate,intermediate,veg,5.1,hiit,0,46,0,0,1,6.1,0,0,0.66,157.4,7646,1.89,None,Low,3,None,1,Low
+65,female,119.6,1.97,30.82,muscle gain,none,low,beginner,pescatarian,6.4,balance,4,111,0,0,0,0,1,11.4,0.89,128.1,4589,2.88,Low,Medium,1,Low,2,Medium
+35,female,74.3,1.78,23.45,muscle gain,none,moderate,intermediate,veg,7.4,cardio,1,99,0,0,0,0,1,3.8,0.97,56.9,2853,4.09,Low,Medium,1,Low,2,Medium
+71,female,107,1.8,33.02,general fitness,injury,low,intermediate,pescatarian,7.2,functional,0,79,0,0,0,0,0,0,0.91,169.3,15759,4.48,Low,None,1,Low,3,None
+64,female,120.2,1.53,51.35,fat loss,none,high,advanced,veg,9.4,flexibility,2,50,0,1,0,0,1,20.1,0.81,161,7905,2,High,Medium,0,High,2,Medium
+33,male,67.9,1.97,17.5,muscle gain,none,high,advanced,non-veg,5,hiit,5,54,1,1,0,0,0,0,0.39,156.9,5949,2.43,High,Medium,0,High,2,Medium
+16,female,89.1,2.01,22.05,general fitness,injury,high,beginner,vegan,6.4,balance,6,71,0,0,0,0,0,0,0.79,153.5,4081,1.91,Low,None,1,Low,3,None
+56,male,136,1.61,52.47,general fitness,none,low,intermediate,pescatarian,7,balance,0,94,0,1,1,2,0,0,0.2,148.1,9088,3.93,Low,Low,1,Low,1,Low
+63,male,61.1,1.9,16.93,muscle gain,none,moderate,beginner,non-veg,6.2,flexibility,2,88,0,0,0,0,0,0,0.74,87.9,10364,3.14,Low,Low,1,Low,1,Low
+18,female,137.9,1.96,35.9,endurance,none,high,beginner,veg,4.7,flexibility,3,34,0,0,0,0,0,0,0.84,141.8,16241,3.55,Medium,None,2,Medium,3,None
+18,male,86.4,1.78,27.27,fat loss,none,low,beginner,vegan,7.7,flexibility,4,87,0,0,1,10,0,0,0.84,172.2,10676,1.55,None,Low,3,None,1,Low
+26,male,72.3,1.76,23.34,endurance,asthma,high,intermediate,vegan,7.1,flexibility,0,79,1,0,0,0,0,0,0.75,114.2,13553,2.3,Medium,None,2,Medium,3,None
+36,male,75,1.69,26.26,endurance,pcos,moderate,intermediate,pescatarian,7.5,cardio,2,102,0,1,0,0,1,22,0.15,207.5,5001,1.12,None,Low,3,None,1,Low
+49,female,100.4,1.87,28.71,endurance,none,high,beginner,pescatarian,6.6,cardio,1,52,0,0,0,0,0,0,0.35,42.5,9048,2.07,Low,Low,1,Low,1,Low
+18,male,72.1,1.75,23.54,general fitness,none,low,advanced,vegan,8.6,functional,5,39,1,1,0,0,0,0,0.15,110.4,9135,4.4,Low,None,1,Low,3,None
+18,female,68.2,1.66,24.75,fat loss,none,high,advanced,vegan,8.1,functional,6,118,0,0,0,0,0,0,0.28,135.8,6714,2,High,Medium,0,High,2,Medium
+71,male,54.6,1.78,17.23,fat loss,none,high,advanced,vegan,8.5,balance,0,110,0,0,0,0,0,0,0.62,168.5,3474,3.4,High,Low,0,High,1,Low
+21,male,109.2,1.81,33.33,general fitness,pcos,low,beginner,non-veg,5,balance,3,120,0,0,0,0,1,22.4,0.19,215,16819,1.71,Low,Medium,1,Low,2,Medium
+24,female,137.7,1.63,51.83,endurance,heart disease,low,advanced,vegan,4.6,strength,2,34,0,0,1,2.6,1,8.9,0.78,152,4102,4.29,Medium,Low,2,Medium,1,Low
+38,female,115.7,1.69,40.51,muscle gain,hypertension,moderate,beginner,veg,6.6,cardio,5,94,1,0,1,3.8,1,15.7,0.14,151.9,6948,2.56,Medium,High,2,Medium,0,High
+29,female,136.5,1.65,50.14,endurance,none,high,advanced,veg,5.5,functional,6,105,0,0,1,1.2,1,1.1,0.92,168.7,6095,2.46,High,Low,0,High,1,Low
+53,male,79.5,1.53,33.96,endurance,asthma,high,beginner,veg,7.6,balance,3,94,1,0,0,0,0,0,0.04,127.7,15969,1.71,Medium,Low,2,Medium,1,Low
+72,male,48.1,2.01,11.91,muscle gain,none,high,intermediate,non-veg,5.4,strength,2,114,0,1,1,16.2,0,0,0.55,215.1,15695,3.24,Medium,Low,2,Medium,1,Low
+21,male,118.9,1.97,30.64,endurance,none,low,intermediate,non-veg,6.9,strength,6,25,0,0,0,0,0,0,0.16,182.4,9593,3.31,None,Low,3,None,1,Low
+69,male,117.1,2.01,28.98,fat loss,none,moderate,advanced,non-veg,9.2,flexibility,6,114,1,0,0,0,0,0,0.43,71.9,2134,4.44,Medium,Low,2,Medium,1,Low
+42,male,111.9,1.61,43.17,general fitness,none,high,advanced,vegan,8.4,hiit,3,55,0,0,0,0,1,11.3,0.86,114.3,9890,3.3,High,Low,0,High,1,Low
+32,female,68.9,1.93,18.5,fat loss,none,high,intermediate,vegan,7.2,hiit,4,111,1,0,0,0,0,0,0.59,86.9,6777,1.86,Medium,Low,2,Medium,1,Low
+61,male,111.3,1.61,42.94,muscle gain,none,high,intermediate,pescatarian,8.7,balance,2,87,0,1,1,15.2,0,0,0.28,129.3,3614,2.11,High,Medium,0,High,2,Medium
+50,male,116.1,1.93,31.17,fat loss,injury,high,beginner,vegan,7.4,hiit,1,27,0,0,0,0,0,0,0.46,64.2,3519,3.83,Low,Medium,1,Low,2,Medium
+60,female,100.9,1.77,32.21,general fitness,hypertension,low,intermediate,veg,5.4,hiit,1,96,0,0,0,0,0,0,0.38,80.2,11316,3.25,Low,Low,1,Low,1,Low
+31,female,60.2,1.67,21.59,general fitness,hypertension,low,advanced,non-veg,6.8,functional,4,115,0,0,0,0,1,9.2,0.07,201.8,2201,1.2,Medium,Low,2,Medium,1,Low
+55,female,82.2,1.84,24.28,endurance,none,high,intermediate,vegan,8.4,strength,0,63,0,0,0,0,0,0,0.64,170.8,13249,2.07,Low,None,1,Low,3,None
+60,female,112.5,1.73,37.59,fat loss,hypertension,high,intermediate,non-veg,8.4,functional,1,88,0,0,0,0,1,13.1,0.24,187.2,12152,3.44,Medium,High,2,Medium,0,High
+64,other,54.6,1.96,14.21,general fitness,none,high,intermediate,non-veg,7.6,strength,5,64,0,0,0,0,1,15.6,0.08,78.8,13120,4.12,Low,Low,1,Low,1,Low
+15,male,56.7,1.78,17.9,muscle gain,none,high,advanced,vegan,5.9,hiit,0,102,0,0,0,0,0,0,0.66,152.8,17743,1.61,High,Low,0,High,1,Low
+19,female,128.3,1.87,36.69,endurance,diabetes,high,advanced,veg,7.2,functional,0,96,0,1,1,3.2,1,8.6,0.37,60.7,6009,1.55,High,Medium,0,High,2,Medium
+45,female,123.2,1.65,45.25,general fitness,none,high,beginner,non-veg,6.6,cardio,6,44,0,0,1,5.1,1,4.8,0.73,185,16641,3.63,Medium,Low,2,Medium,1,Low
+44,male,59.4,1.72,20.08,muscle gain,none,high,advanced,non-veg,7.8,flexibility,0,87,0,0,0,0,1,12.3,0.31,110.1,7691,2.05,High,Medium,0,High,2,Medium
+75,female,111.2,1.52,48.13,muscle gain,injury,moderate,intermediate,pescatarian,7.3,strength,5,35,0,0,0,0,1,14.9,0.2,145.8,13211,2.38,Low,High,1,Low,0,High
+66,female,103.6,1.59,40.98,muscle gain,none,high,advanced,veg,8.5,cardio,1,78,1,0,0,0,0,0,0.34,200.5,6200,3.03,High,Medium,0,High,2,Medium
+53,male,82.6,1.9,22.88,muscle gain,none,high,advanced,pescatarian,9.3,strength,1,105,0,1,0,0,0,0,0.3,115.9,6876,4.3,High,Medium,0,High,2,Medium
+35,female,110.8,1.78,34.97,endurance,none,high,intermediate,veg,6.5,cardio,0,111,0,0,0,0,0,0,0.13,159.5,17012,2.7,Medium,Low,2,Medium,1,Low
+59,male,96.4,1.54,40.65,fat loss,none,low,beginner,veg,8.8,cardio,0,120,0,1,0,0,1,8.2,0.35,206.8,15422,3.4,Low,High,1,Low,0,High
+38,female,137.3,1.51,60.22,fat loss,none,low,beginner,veg,5.1,functional,1,120,1,0,0,0,1,8.4,0.43,64.9,6622,3.23,Low,High,1,Low,0,High
+18,male,138.7,1.95,36.48,muscle gain,none,high,intermediate,non-veg,8.8,hiit,3,120,0,0,0,0,0,0,0.08,61.7,14799,3.08,High,High,0,High,0,High
+71,male,126.9,1.74,41.91,fat loss,diabetes,high,beginner,pescatarian,8.8,cardio,4,91,0,1,0,0,1,13.5,0.27,128.9,14416,1.8,Medium,High,2,Medium,0,High
+30,female,78.3,1.53,33.45,muscle gain,none,moderate,advanced,non-veg,4.8,hiit,5,20,0,0,1,14,1,12.2,0.38,47,3938,2.93,Medium,High,2,Medium,0,High
+64,male,94.4,1.59,37.34,muscle gain,none,low,beginner,non-veg,7.8,balance,0,52,0,0,0,0,0,0,0.09,67.4,14378,4.31,Low,High,1,Low,0,High
+47,male,106.9,1.64,39.75,fat loss,none,high,intermediate,vegan,6.3,cardio,5,64,1,0,1,7.4,1,5.5,0.97,50.8,10228,1.47,Medium,High,2,Medium,0,High
+50,female,106.1,1.55,44.16,endurance,none,high,advanced,veg,8,functional,1,43,1,0,0,0,0,0,0.57,118.7,5351,1.32,High,None,0,High,3,None
+18,male,135.4,2,33.85,endurance,none,high,advanced,veg,8.2,functional,2,79,0,0,0,0,1,4.3,0.67,161.6,8289,2.36,High,Low,0,High,1,Low
+16,female,69.2,1.98,17.65,endurance,none,high,advanced,pescatarian,4.5,flexibility,3,95,1,0,0,0,1,1,0.5,172.6,12606,3.18,High,None,0,High,3,None
+32,female,135.3,1.9,37.48,muscle gain,pcos,high,intermediate,pescatarian,6.2,cardio,4,71,0,1,0,0,1,1.6,0.18,164.5,3983,4.44,Medium,High,2,Medium,0,High
+47,female,89.3,1.61,34.45,muscle gain,none,moderate,advanced,veg,9.1,strength,6,105,0,0,0,0,1,6.1,0.07,143.3,12768,1.8,High,High,0,High,0,High
+42,female,73.4,1.91,20.12,muscle gain,none,high,advanced,pescatarian,6.7,functional,3,17,0,0,0,0,0,0,0.87,164.5,4271,1.95,High,Low,0,High,1,Low
+28,female,106.9,1.56,43.93,muscle gain,pcos,moderate,intermediate,vegan,9.5,hiit,2,56,0,0,0,0,1,2.7,0.77,63.6,1554,1.56,Low,High,1,Low,0,High
+35,female,88.2,2.02,21.62,endurance,none,high,advanced,veg,8,balance,6,97,0,0,0,0,0,0,0.81,112.5,10904,4.11,High,None,0,High,3,None
+18,male,101.7,1.57,41.26,general fitness,none,high,advanced,pescatarian,5.5,flexibility,5,65,1,0,0,0,0,0,0.78,102.4,7706,3.71,High,None,0,High,3,None
+18,female,84.4,1.76,27.25,general fitness,none,high,advanced,non-veg,5.8,strength,3,102,0,0,0,0,0,0,0.83,185.2,13603,1.19,High,None,0,High,3,None
+54,male,110.1,1.96,28.66,muscle gain,none,high,advanced,veg,5.1,strength,4,98,1,1,0,0,0,0,0.86,137.4,7287,3.59,High,Low,0,High,1,Low
+37,male,87.1,1.79,27.18,muscle gain,none,high,advanced,non-veg,7.1,flexibility,4,69,1,0,1,15.1,0,0,0.78,87,13399,1.49,High,Low,0,High,1,Low
+34,female,131.3,1.55,54.65,muscle gain,hypertension,high,intermediate,non-veg,7.9,flexibility,1,88,0,0,0,0,1,11.8,0.33,145.5,11868,1.98,High,High,0,High,0,High
+44,male,102.2,1.94,27.15,fat loss,none,high,advanced,vegan,4.9,balance,0,115,0,1,0,0,0,0,0.42,128,8087,1.5,High,Low,0,High,1,Low
+40,female,107.3,1.69,37.57,muscle gain,heart disease,moderate,advanced,non-veg,6.7,cardio,1,88,1,0,0,0,1,9.8,0.25,136.3,9378,4.2,High,High,0,High,0,High
+68,female,139,1.86,40.18,endurance,hypertension,high,advanced,veg,8.5,flexibility,0,65,0,0,1,1.5,0,0,0.49,56.2,12668,4.1,High,Low,0,High,1,Low
+40,female,50.4,1.97,12.99,endurance,none,high,advanced,vegan,4.6,functional,1,83,0,0,0,0,0,0,0.77,126.9,3453,3.29,High,None,0,High,3,None
+36,male,115.9,1.9,32.11,general fitness,pcos,high,advanced,vegan,6.9,flexibility,4,27,0,0,0,0,0,0,0.54,83.8,14526,1.93,High,None,0,High,3,None
+68,other,134.2,1.87,38.38,fat loss,none,high,advanced,pescatarian,5.3,cardio,1,51,0,0,0,0,0,0,0.18,56.9,12204,2.83,High,High,0,High,0,High
+56,male,99.2,1.62,37.8,general fitness,injury,high,advanced,veg,8.6,hiit,1,117,0,0,1,9.5,0,0,0.74,155.8,7159,1.29,High,None,0,High,3,None
+31,other,139.4,1.71,47.67,endurance,none,high,advanced,pescatarian,8.5,strength,1,108,0,1,0,0,0,0,0.78,210.3,12965,2.2,High,None,0,High,3,None
+62,female,73.1,1.56,30.04,fat loss,none,moderate,intermediate,veg,7,flexibility,4,94,0,0,0,0,1,20.1,0.06,78.6,10588,1.42,None,High,3,None,0,High
+16,female,113.7,1.78,35.89,fat loss,hypertension,low,intermediate,non-veg,5.5,strength,0,61,0,0,1,13.5,1,14.1,0.06,140.3,2396,1.01,None,High,3,None,0,High
+46,female,105.2,1.66,38.18,fat loss,none,moderate,beginner,non-veg,9,strength,6,32,0,0,0,0,1,24.6,0.45,58,4437,4.34,None,High,3,None,0,High
+62,female,88.8,1.61,34.26,fat loss,none,moderate,beginner,non-veg,7.8,strength,2,17,0,0,0,0,1,17.7,0.18,82.5,4043,3.54,None,High,3,None,0,High
+34,male,103.3,1.78,32.6,muscle gain,asthma,high,intermediate,pescatarian,9.4,cardio,2,109,0,0,0,0,1,3.9,0.57,44.8,17975,2.33,High,High,0,High,0,High
+26,female,137.2,1.62,52.28,fat loss,hypertension,high,advanced,pescatarian,7.8,functional,3,52,0,0,0,0,1,13.9,0.3,169,8834,2.34,High,High,0,High,0,High
+39,female,96.4,1.74,31.84,muscle gain,asthma,high,advanced,non-veg,7.7,strength,0,25,0,1,0,0,1,17.5,0.18,104.5,12199,3.46,High,High,0,High,0,High
+71,female,109.4,1.94,29.07,fat loss,hypertension,moderate,intermediate,vegan,4.6,strength,1,28,0,0,0,0,0,0,0.09,65.4,1511,3.57,None,High,3,None,0,High
+23,male,129.9,1.98,33.13,muscle gain,hypertension,high,beginner,vegan,5.9,strength,1,101,0,1,0,0,1,2.8,0.32,94.3,11487,1.86,High,High,0,High,0,High
+70,male,62.5,2,15.62,muscle gain,injury,low,intermediate,veg,5.4,hiit,6,67,0,0,1,13.5,1,8.1,0.39,69.8,9258,1.49,None,High,3,None,0,High
+37,female,101.8,1.81,31.07,fat loss,heart disease,low,beginner,vegan,8.8,functional,5,67,0,0,0,0,0,0,0.31,44.2,17978,1.61,None,High,3,None,0,High
+42,female,67.9,1.5,30.18,muscle gain,diabetes,moderate,beginner,pescatarian,7.8,cardio,6,64,0,0,0,0,1,3.2,0.72,54.3,15112,3.29,None,High,3,None,0,High
+22,female,81.1,1.67,29.08,muscle gain,asthma,low,intermediate,veg,5.3,strength,5,21,1,0,1,5.1,0,0,0.33,68.3,8395,2.06,None,High,3,None,0,High
+65,female,134.7,1.54,56.8,muscle gain,injury,high,beginner,pescatarian,8.1,hiit,1,87,0,1,0,0,1,13.9,0.25,55,9295,1.64,High,High,0,High,0,High
+67,female,114.2,1.98,29.13,fat loss,none,moderate,beginner,pescatarian,5.8,balance,6,63,0,0,0,0,0,0,0.24,66.3,1781,2.17,None,High,3,None,0,High
